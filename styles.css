@@ -1,0 +1,218 @@
+/* Style général */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f8ff;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background: linear-gradient(90deg, #4facfe, #00f2fe);
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+h2, h3 {
+    margin: 0;
+    font-weight: 400;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.period {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.forecast {
+    padding: 1rem;
+    text-align: center;
+}
+
+.forecast h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.temperature {
+    font-size: 1.5rem;
+    color: #ff6347;
+    font-weight: bold;
+}
+
+.rain, .wind {
+    margin-top: 0.5rem;
+    font-size: 100px;
+    color: #1e90ff;
+}
+
+/* Style des periods météo */
+.period {
+    background: linear-gradient(135deg, #e0f7fa, #b2ebf2);
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.period .forecast p .rain span{
+    font-size: 100px;
+}
+
+.period:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.period h4 {
+    font-size: 1.3rem;
+    margin: 0;
+    color: #333;
+}
+
+.period .icon {
+    font-size: 4rem;
+    color: #0288d1;
+}
+
+.period .temperature {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #ff5722;
+}
+
+.period .details {
+    font-size: 1rem;
+    color: #616161;
+    text-align: center;
+}
+
+/* Section qualité de l'air */
+.air-quality {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.air-quality h4 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.air-quality .metric {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
+    color: #444;
+}
+
+.air-quality .metric .value {
+    font-weight: bold;
+    color: #00796b;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    header {
+        padding: 0.5rem 0;
+    }
+
+    .container {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+
+    .forecast h3 {
+        font-size: 1rem;
+    }
+
+    .temperature {
+        font-size: 1.2rem;
+    }
+}
+
+/* Map Styling */
+#map {
+    margin: 1rem auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 90%;
+}
+
+/* Navigation et boutons */
+nav {
+    display: flex;
+    justify-content: center;
+    background: #4facfe;
+    padding: 0.5rem 0;
+}
+
+nav a {
+    margin: 0 1rem;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Section APIs utilisées */
+.used_api {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    margin: 1rem auto;
+    max-width: 90%;
+}
+
+.used_api h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.used_api ul {
+    list-style: none;
+    padding: 0;
+}
+
+.used_api li {
+    margin-bottom: 0.5rem;
+}
+
+.used_api a {
+    color: #0288d1;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.used_api a:hover {
+    text-decoration: underline;
+}
