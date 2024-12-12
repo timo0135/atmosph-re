@@ -12,14 +12,14 @@ function getAirQualityTODAY(){
     $json = curl_exec($ch);
     $data = json_decode($json);
     $features = $data->features;
-    $today = time();
+    $today = new DateTime();
     $closestFeature = null;
     $smallestDiff = PHP_INT_MAX;
 
     foreach ($features as $feature){
-        $date = substr($feature->attributes->date_ech, 0, -3);
-        $date = intval($date);
-        $diff = abs($date - $today);
+        $dateStr = substr($feature->attributes->date_ech, 0, -3);
+        $date = DateTime::createFromFormat('U', $dateStr);
+        $diff = abs($date->getTimestamp() - $today->getTimestamp());
 
         if ($diff < $smallestDiff){
             $smallestDiff = $diff;
@@ -28,4 +28,3 @@ function getAirQualityTODAY(){
     }
     return $closestFeature;
 }
-

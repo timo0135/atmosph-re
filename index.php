@@ -25,12 +25,12 @@ $longitude = $coord->longitude;
             crossorigin=""></script>
 </head>
 <body>
-<?php echo $xml; ?>
-<div class="air-quality">
+<div class="air-quality" style="display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: <?php echo $qualite->attributes->coul_qual ?>;">
     <h3>Qualité de l'air à Nancy : </h3>
-    <div style="display: flex; flex-direction: row; justify-content: flex-start; align-items: center"><p><?php echo $qualite->attributes->lib_qual ?>  </p><span style="background-color: <?php echo $qualite->attributes->coul_qual ?>; width: 15px; height: 15px; border-radius: 50%; display: inline-block;"></span></div>
-    <p><?php echo $qualite->attributes->code_qual ?></p>
+    <p><?php echo $qualite->attributes->lib_qual ?>  </p>
+    <p class="details"><?php echo $qualite->attributes->code_qual ?></p>
 </div>
+<?php echo $xml; ?>
 <div id="map" style="height: 600px;"></div>
 <div class="used_api">
     <h3>APIs utilisées :</h3>

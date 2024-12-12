@@ -44,6 +44,9 @@
                     <xsl:when test="pluie &gt; 0">
                         <span>🌧️</span>
                     </xsl:when>
+                    <xsl:when test="pluie = 0 and format-number(temperature/level[@val='2m'] - 273.15, '0.00') &gt; 15">
+                        <span>☀️</span>
+                    </xsl:when>
                     <xsl:otherwise>
                         <span>☁️</span>
                     </xsl:otherwise>
