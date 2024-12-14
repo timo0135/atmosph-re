@@ -52,10 +52,21 @@ h2, h3 {
     font-weight: bold;
 }
 
-.rain, .wind {
+.rain {
     margin-top: 0.5rem;
     font-size: 100px;
     color: #1e90ff;
+}
+
+.wind {
+    margin-top: 0.5rem;
+    font-size: 1.5rem;
+    color: #1e90ff;
+}
+
+.rain span p {
+    font-size: 1.2rem;
+    margin: 0;
 }
 
 /* Style des periods météo */
@@ -72,9 +83,6 @@ h2, h3 {
     gap: 0.5rem;
 }
 
-.period .forecast p .rain span{
-    font-size: 100px;
-}
 
 .period:hover {
     transform: translateY(-5px);

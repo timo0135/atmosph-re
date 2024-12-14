@@ -55,7 +55,7 @@
             <p class="wind">
                 <xsl:choose>
                     <xsl:when test="vent_moyen/level[@val='10m'] &gt; 10">
-                        <span>💨 <xsl:value-of select="vent_moyen/level[@val='10m']"/> km/h</span>
+                        <span>💨 <p><xsl:value-of select="vent_moyen/level[@val='10m']"/> km/h</p></span>
                     </xsl:when>
                 </xsl:choose>
             </p>
